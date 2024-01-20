@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Under Water</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+  }
+
+  .navbar {
+    background-color: black;
+    border-bottom: 10PX solid rgb(239, 224, 149);
+    height: 100px;
+    width: 100%;
+  }
+
+  .navbar-brand img {
+    height: 80px;
+    width: 80px;
+  }
+
+  .nav-link {
+    color: white !important;
+    font-weight: 800 !important;
+  }
+
+  .nav-link:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
+    text-underline-offset: 1em;
+    color: rgb(239, 224, 149) !important;
+  }
+
+  .dropdown-menu {
+    background-color: black !important;
+    width: 200px;
+    text-align: center;
+  }
+
+  .dropdown-item {
+    color: white;
+    background-color: #000000;
+    font-weight: bold;
+  }
+
+  .dropdown-item:hover {
+    color: rgb(239, 224, 149);
+    background-color: #000000;
+  }
+
+  .navbar-drop {
+    background-color: #000000;
+    text-align: center;
+  }
+
+  .display-1 {
+    margin-top: 30px;
+    text-shadow: 0px 1px 1px black;
+  }
+
+  .cardbutton {
+    width: 150px;
+    background-color: #91493B;
+    border: #91493B;
+    color: white;
+    transition: 0.5s;
+  }
+
+  .cardbutton:hover {
+    background-color: #91493B;
+    width: 160px;
+    color: white;
+  }
+
+  .card {
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 12px;
+  }
+
+  .wondercontent {
+    text-align: justify;
+  }
+
+  .watercontent {
+    text-align: justify;
+  }
+
+
+
+
+  /* Modal Start*/
+  .modal-body img {
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 4px 12px;
+  }
+
+  .modal-body p {
+    text-align: justify;
+  }
+
+  .booknow {
+    width: 140px;
+    font-size: 16px;
+    background: #91493B;
+    margin-top: 10px;
+    font-weight: 550;
+    transition: 0.5s;
+    color: white;
+  }
+
+  .downloadbtn {
+    width: 140px;
+    font-size: 16px;
+    margin-top: 10px;
+    font-weight: 550;
+    transition: 0.5s;
+  }
+
+  .downloadbtn:hover {
+    width: 170px;
+  }
+
+  .booknow:hover {
+    background-color: #91493B;
+    width: 170px;
+    color: white;
+  }
+
+  .modal-text {
+    text-shadow: 0px 1px 1px black;
+  }
+
+  /* Modal End */
+
+
+
+
+
+  /* footer */
+  footer {
+    background-color: rgb(10, 10, 10);
+    color: white;
+    border-top: 10px solid rgb(239, 224, 149);
+  }
+
+  .footerhd {
+    color: rgb(239, 224, 149);
+  }
+
+  .footerlogo {
+    margin-right: 10px;
+  }
+
+  .text-reset:hover {
+    color: rgb(239, 224, 149) !important;
+    border-bottom: 5px solid rgb(239, 224, 149) !important;
+  }
+
+  p a {
+    text-decoration: none;
+  }
+
+  .text-reset {
+    text-decoration: none;
+  }
+
+  .footericons {
+    color: rgb(239, 224, 149);
+    font-size: 25px;
+  }
+
+  .footericons i:hover {
+    font-size: 30px;
+    color: rgb(239, 224, 149);
+  }
+
+  .fuzail {
+    width: 100%;
+  }
+
+  /* footer end */
+</style>
+
+<body>
+
+  <!-- navbar start here -->
+
+  <nav class="navbar navbar-expand-lg" style="position: sticky; top: 0; z-index: 50000;">
+
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="logo.png" alt="">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse navbar-drop" id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Wonders
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="pak cards.html">Pakistan</a></li>
+              <li><a class="dropdown-item" href="civil card.html">Civil</a></li>
+              <li><a class="dropdown-item" href="manmadewonder.html">Man Made</a></li>
+              <li><a class="dropdown-item" href="naturalwondercard.html">Natural</a></li>
+              <li><a class="dropdown-item" href="underwater.html">Under Water</a></li>
+              <li><a class="dropdown-item" href="Ancient Wonders.html">Ancient</a></li>
+              <li><a class="dropdown-item" href="sevenwonder.html">New Seven</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ContactUs.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Gallery.html">Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="booking.html">Booking</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="feedback.html">Feedback</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- navbar end here -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <section>
+          <!-- heading start -->
+          <div class="heading">
+            <h1 class="display-1"><span>U</span>nderwater <span>W</span>onders
+            </h1>
+            <p class="wondercontent">The list of the Seven Underwater Wonders of the World was created by CEDAM
+              International (Conservation, Education, Diving, Awareness and Marine research), a non-profit organization
+              of divers. This organization is dedicated to oceanic research and conservation.
+
+              CEDAM began the Seven Underwater Wonders project in 1989. At this time, it was decided that a list of sea
+              wonders should be created in order to protect these special locations in the under water world, before
+              they are lost forever.
+
+              Each of these wonders of the sea was selected because of its beauty, its marine life, its scientific
+              research value and its environmental importance.
+
+              Finally, the results were revealed at the National Aquarium in Washington DC, and the list includes the
+              following amazing places:
+            </p>
+          </div>
+          <!-- heading end -->
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card mb-3" style="max-width: 1000px;">
+          <div class="row no-gutters">
+            <div class="col-md-5">
+              <img src="sea vents.webp" class="card-img" alt="..." height="285px" width="100%">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h2 class="card-title">Deep Sea Vents</h2>
+                <p class="card-text watercontent">Also known as hydrothermal vents. They sustain some of the most
+                  bizarre and impressive ecosystems of the world, since these ecosystems are to a great depth.
+                </p>
+                <p class="card-text"><small class="text-muted">Puerto Ayora, Ecuador
+                  </small></p>
+
+                <button type="button" class="btn modalbtn cardbutton" data-bs-toggle="modal"
+                  data-bs-target="#exampleModal1">
+                  Read More
+                </button>
+                <!-- Modal 1-->
+                <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1"
+                  aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel1">Deep Sea Vents</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <img src="sea vents.webp" height="300px" width="100%" alt="">
+                        <h1 class="text-center modal-text mt-4"><span>D</span>eep <span>S</span>ea <span>V</span>ents
+                        </h1>
+                        <p>Deep-sea vents are hydrothermal vents on the ocean floor, emitting hot, mineral-rich fluids
+                          that support unique ecosystems thriving in extreme conditions.</p>
+                        <h2 class="text-center modal-text"><span>H</span>istory</h2>
+                        <p>Discovered in 1977, deep-sea vents are hydrothermal systems on the ocean floor, fostering
+                          unique ecosystems fueled by mineral-rich, superheated water.</p>
+                      </div>
+                      <div class="modal-footer">
+                        <a href="Gallery.html"><button type="button" class="btn booknow">See Gallery</button></a>
+                        <a href="booking.html"><button type="button" class="btn booknow">Booking Now</button></a>
+                        <a href="word file/deep sea vents.docx"><button type="button"
+                            class="btn btn-primary downloadbtn">Download PDF</button></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card mb-3" style="max-width: 1000px;">
+          <div class="row no-gutters">
+            <div class="col-md-5">
+              <img src="galapgos.webp" class="card-img" alt="..." height="285px" width="100%">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h2 class="card-title">Galapagos Islands</h2>
+                <p class="card-text watercontent">This archipelago is the home of some of the most beautiful and
+                  impressive species of the world, which inspired to Charles Darwin to create his Theory of Evolution.
+                </p>
+                <p class="card-text"><small class="text-muted">Puerto Ayora, Ecuador
+                  </small></p>
+                <button type="button" class="btn modalbtn cardbutton" data-bs-toggle="modal"
+                  data-bs-target="#exampleModal2">
+                  Read More
+                </button>
+                <!-- Modal 2-->
+                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2"
+                  aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel2">Galapagos Islands</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <img src="galapgos.webp" height="300px" width="100%" alt="">
+                        <h1 class="text-center modal-text mt-4"><span>G</span>alapagos <span>I</span>slands </h1>
+                        <p>The Galápagos Islands are renowned for their unique and diverse wildlife, inspiring Charles
+                          Darwin's theory of evolution.</p>
+                        <h2 class="text-center modal-text"><span>H</span>istory</h2>
+                        <p>The Galápagos Islands, located in the Pacific Ocean, gained historical significance for
+                          inspiring Charles Darwin's theory of evolution due to their unique and diverse ecosystems.</p>
+                      </div>
+                      <div class="modal-footer">
+                        <a href="Gallery.html"><button type="button" class="btn booknow">See Gallery</button></a>
+                        <a href="booking.html"><button type="button" class="btn booknow">Booking Now</button></a>
+                        <a href="word file/galapagos island.docx"><button type="button"
+                            class="btn btn-primary downloadbtn">Download PDF</button></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card mb-3" style="max-width: 1000px;">
+          <div class="row no-gutters">
+            <div class="col-md-5">
+              <img src="palau.webp" class="card-img" alt="..." height="285px" width="100%">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h2 class="card-title">Palau Reefs</h2>
+                <p class="card-text"></p>
+                <p class="card-text watercontent">Formed around two million years ago, this Pacific Ocean archipelago is
+                  one of the most biodiverse Coral Reefs of the world. You can Read More
+                </p>
+                <p class="card-text"><small class="text-muted">Palau, Pacific Ocean
+                  </small></p>
+                <button type="button" class="btn modalbtn cardbutton" data-bs-toggle="modal"
+                  data-bs-target="#exampleModal3">
+                  Read More
+                </button>
+                <!-- Modal 3-->
+                <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3"
+                  aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel3">Palau Reefs</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <img src="palau.webp" height="300px" width="100%" alt="">
+                        <h1 class="text-center modal-text mt-4"><span>P</span>alau <span>R</span>eefs </h1>
+                        <p>Palau's reefs boast breathtaking biodiversity, with vibrant coral formations and diverse
+                          marine life, making them a UNESCO World Heritage site.</p>
+                        <h2 class="text-center modal-text"><span>H</span>istory</h2>
+                        <p>Palau's reefs boast a rich history, serving as vital ecosystems and witnessing the resilience
+                          of marine biodiversity amid various environmental challenges.</p>
+                      </div>
+                      <div class="modal-footer">
+                        <a href="Gallery.html"><button type="button" class="btn booknow">See Gallery</button></a>
+                        <a href="booking.html"><button type="button" class="btn booknow">Booking Now</button></a>
+                        <a href="word file/palau reefs.docx"><button type="button"
+                            class="btn btn-primary downloadbtn">Download PDF</button></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="card mb-3" style="max-width: 1000px;">
+          <div class="row no-gutters">
+            <div class="col-md-5">
+              <img src="baikal.webp" class="card-img" alt="..." height="285px" width="100%">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h2 class="card-title">Lake Baikal</h2>
+                <p class="card-text watercontent">Lake Baikal is the deepest lake in the world and the largest reservoir
+                  of fresh surface water on the planet.
+                </p>
+                <p class="card-text"><small class="text-muted">Irkutsk, Russia
+                  </small></p>
+                <button type="button" class="btn modalbtn cardbutton" data-bs-toggle="modal"
+                  data-bs-target="#exampleModal4">
+                  Read More
+                </button>
+                <!-- Modal 4-->
+                <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel4"
+                  aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel4">Lake Baikal</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <img src="baikal.webp" height="300px" width="100%" alt="">
+                        <h1 class="text-center modal-text mt-4"><span>L</span>ake <span>B</span>aikal </h1>
+                        <p>Lake Baikal is the world's deepest and oldest freshwater lake, located in Siberia, Russia.
+                        </p>
+                        <h2 class="text-center modal-text"><span>H</span>istory</h2>
+                        <p>Lake Baikal, located in Siberia, is the world's deepest freshwater lake, reaching depths of
+                          over 5,387 feet (1,642 meters), and it holds around 20% of the Earth's unfrozen freshwater.
+                        </p>
+                      </div>
+                      <div class="modal-footer">
+                        <a href="Gallery.html"><button type="button" class="btn booknow">See Gallery</button></a>
+                        <a href="booking.html"><button type="button" class="btn booknow">Booking Now</button></a>
+                        <a href="word file/Lake baikal.docx"><button type="button"
+                            class="btn btn-primary downloadbtn">Download PDF</button></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+  <!-- Footer -->
+  <footer class="text-center text-lg-start text-light mt-4">
+
+    <!-- Section: Social media -->
+
+    <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+      <!-- Left -->
+      <div class="me-5 d-none d-lg-block">
+        <span class="m-5 p-4 fw-bold footerhd">MADE BY : MUHAMMAD ZOHAIB , MUHAMMAD RAFAY , MUHAMMAD FUZAIL ,
+          MUZAMMIL</span>
+      </div>
+      <!-- Left -->
+
+      <!-- Right -->
+      <div class="footericons">
+        <a href="https://www.facebook.com/gulnaz.shahid.58494" class="me-4 text-reset">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://x.com/Hussain965640?t=H6j4QVwXy1Ge6aBdgP4I5g&s=09" class="me-4 text-reset">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com/fuzail._28?igsh=MTNmZDIxemltaXdy" class="me-4 text-reset">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/muzzammil-hussain-648564291?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+          class="me-4 text-reset">
+          <i class="fab fa-linkedin"></i>
+        </a>
+
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold mb-4">
+              <img src="logo.png" alt="" height="65px" width="65px" class="footerlogo"><span
+                class="footerhd">Wonders Of
+                World</span>
+            </h6>
+            <p>
+              Journey with us to discover the most amazing places in the world. Learn about world and national wonders
+              and create your own ultimate bucket list
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h5 class="text-uppercase fw-bold mb-4 hr">
+              <span class="footerhd">PAKISTAN</span>
+            </h5>
+            <p>
+              <a href="pak cards.html" class="text-reset footerhover  text-decoration-none">Mazar-e-Quaid</a>
+            </p>
+            <p>
+              <a href="pak cards.html" class="text-reset">Minar-e-Pakistan</a>
+            </p>
+            <p>
+              <a href="pak cards.html" class="text-reset">Pakistan Monument</a>
+            </p>
+            <p>
+              <a href="pak cards.html" class="text-reset">Faisal Mosque</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h5 class="text-uppercase fw-bold mb-4">
+              <span class="footerhd">Wonders</span>
+            </h5>
+            <p>
+              <a href="sevenwonder.html" class="text-reset">New 7 Wonders</a>
+            </p>
+            <p>
+              <a href="naturalwondercard.html" class="text-reset">Natural</a>
+            </p>
+            <p>
+              <a href="civil card.html" class="text-reset">Civil Engineering</a>
+            </p>
+            <p>
+              <a href="underwater.html" class="text-reset">Under Water</a>
+            </p>
+            <p>
+              <a href="Ancient Wonders.html" class="text-reset">Ancient World</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h5 class="text-uppercase fw-bold mb-4"><span class="footerhd">More</span></h5>
+            <p><a href="about.html" class="text-reset">About Us</a></p>
+            <p><a href="ContactUs.html" class="text-reset">Contact Us</a></p>
+            <p><a href="faq.html" class="text-reset">Faq's</a></p>
+            <p><a href="booking.html" class="text-reset">Online Booking</a></p>
+          </div>
+
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+      © 2023 Visit Website:
+      <a class="text-reset fw-bold" href="index.html">WOW</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+  integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script> -->
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</html>
