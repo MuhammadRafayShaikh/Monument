@@ -56,6 +56,9 @@
     background-color: #000000;
     text-align: center;
   }
+  .navbar-toggler {
+      color: white;
+  }
   
   
   .indexer{
