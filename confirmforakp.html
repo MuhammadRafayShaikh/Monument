@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access</title>
+</head>
+<body>
+    <!-- <h1>The Window Object</h1>
+<h2>The confirm() Method</h2>
+
+<p>Click the button to display a confirm box.</p> -->
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  let text;
+  if (confirm("Press OK to see Login Box, My intention is not to offend anyone, this is just for fun, no one should take it seriously, and I have no enmity with anyone, if it still feels bad, then I'm sorry, and if it doesn't feel bad, then enjoy it") == true) {
+    text = location.href=("age.html");
+  } else {
+    text = "You canceled!";
+  }
+  document.getElementById("demo").innerHTML = text;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<style>
+    *{
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        background-color: black;
+    }
+    button{
+        height: 35px;
+        width: 100px;
+        position: relative;
+        left: 47%;
+        top: 10px;
+        background-color: cyan;
+        border: 1px solid cyan;
+        color: black;
+        font-weight: 800;
+        border-radius: 10px;
+        transition: all 0.3s;
+    }
+    button:hover{
+        box-shadow: 5px 5px 30px cyan, -5px -5px 25px rgba(170, 206, 206, 0.993);
+    }
+
+    #demo{
+        font-style: italic;
+        color: cyan;
+        text-align: center;
+        margin-top: 50px;
+
+    }
+
+</style>
+<body>
+    <!-- <h1>The Window Object</h1>
+<h2>The prompt() Method</h2>
+
+<p>Click the button to demonstrate the prompt box.</p> -->
+
+<button onclick="login()">Login Box</button>
+
+<p id="demo"></p>
+
+<script>
+    let persondet = "admin";
+    let passdet = "rafaybhai";
+    function login() {
+        let person = prompt("Enter Username");
+        let pass = prompt("Enter Password");
+        if (person == persondet && pass == passdet) {
+            document.getElementById("demo").innerHTML =
+                person = location.href = ("akpmain.html");
+        } else if (person == "" || pass == "") {
+            document.getElementById('demo').innerHTML = "Please put Username and Password instead of left blank for visit website";
+        } else if (person != persondet || pass != passdet) {
+            document.getElementById('demo').innerHTML = "Please put valid Username and Password for visit website";
+        } else {
+            document.write("Work Hard");
+        }
+    }
+</script>
+</body>
+</html>

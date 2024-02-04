@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Josefin Sans', sans-serif;
+}
+
+/* Navbar Start */
+.navbar {
+  background-color: black;
+  border-bottom: 10px solid rgb(255, 213, 0);
+  height: 100px;
+  width: 100%;
+}
+
+.navbar-brand img {
+  height: 80px;
+  width: 80px;
+}
+
+.nav-link {
+  color: rgb(255, 213, 0) !important;
+  font-weight: 800 !important;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 5px;
+  text-underline-offset: 1em;
+  color: rgb(255, 213, 0) !important;
+}
+
+.dropdown-menu {
+  z-index: 100000;
+  background-color: black !important;
+  width: 200px;
+  text-align: center;
+}
+
+.dropdown-item {
+  color: white;
+  background-color: #000000;
+  font-weight: bold;
+}
+
+.dropdown-item:hover {
+  color: rgb(239, 224, 149);
+  background-color: #000000;
+}
+
+.navbar-drop {
+  background-color: #000000;
+  text-align: center;
+}
+
+
+.indexer{
+  z-index: -1;
+}
+/* Navbar End */
+
+/* Text Effect Start */
+.iam{
+  font-size: 2em;
+  font-weight: 500;
+  color: black;
+  /* padding: 0 100px; */
+}
+.iam .skills{
+  position: relative;
+  color: black;
+  animation: display1 9s infinite;
+  animation-delay: calc(-3s * var(--i));
+}
+@keyframes display1{
+  0%{
+      display: inline-block;
+  }
+  33.33%,100%{
+      display: none;
+
+  }
+}
+.skills::before{
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  color: rgb(255, 213, 0);
+  border-right: 4px solid rgb(255, 213, 0);
+  filter: drop-shadow(0 0 5px rgb(255, 213, 0)) drop-shadow(0 0 25px rgb(255, 213, 0));
+  animation: write 3s linear infinite;
+}
+@keyframes write {
+  0%,10%,100%{
+      width: 0;
+  }
+  70%,90%{
+      width: 100%;
+
+  }
+  
+}
+
+
+.services .sercard{
+  /* background-color: rgb(87, 87, 87);  */
+  box-shadow: 1px 1px 10px rgb(255, 213, 0);;
+  /* height: 200px; */
+  /* width: 15; */
+}
+.icon{
+  text-align: center;
+  margin-left: 45%;
+}
+button {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 5px;
+  width: 150px;
+  color: black;
+  font-weight: 700;
+  background-color: transparent;
+  border: 1px solid black;
+  transition: all 0.5s;
+}
+
+button:hover {
+  box-shadow: 1px 1px 30px black, 5px 5px 40px black;
+  background-color: black;
+  color: rgb(255, 213, 0);
+  border: 1px solid black;
+}
+
+/* Text Effect End */
+
+/* Hero Section Start */
+
+.main{
+  height: 400px;
+  width: 100%;
+  /* position: absolute; */
+  /* z-index: 10; */
+  /* filter: blur(1px); */
+  background: rgb(0,0,0);
+background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(255,239,0,1) 50%, rgba(0,0,0,1) 100%);
+}
+.mainspart{
+  backdrop-filter: blur(10px);
+  /* height: 350px;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  background-color: black; */
+}
+.welcome{
+  color: black;
+}
+/* .maincontent{
+  backdrop-filter: blur(20px);
+} */
+/* Hero Section End */
